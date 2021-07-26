@@ -5,39 +5,39 @@ use mode::ProxyModeOptions;
 
 #[derive(Debug, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct ProxyOptions {
-    pub proxy_mode: &'static str,
-    pub proxy_pac_url: &'static str,
-    pub proxy_server: &'static str,
-    pub proxy_bypass_list: &'static str,
+    pub proxy_mode: String,
+    pub proxy_pac_url: String,
+    pub proxy_server: String,
+    pub proxy_bypass_list: String,
 }
 
 impl ProxyOptions {
     pub fn new(
         mode: ProxyModeOptions,
-        proxy_pac_url: &'static str,
-        proxy_server: &'static str,
-        proxy_bypass_list: &'static str ) -> Self 
+        proxy_pac_url: String,
+        proxy_server: String,
+        proxy_bypass_list: String ) -> Self 
     {        
-        let pmode: &'static str;
-        let pac: &'static str;
-        let pserver: &'static str;
-        let pbypass: &'static str;
+        let pmode: String;
+        let pac: String;
+        let pserver: String;
+        let pbypass: String;
 
         match mode {
             ProxyModeOptions::Direct => {
-                pmode = "direct";
+                pmode = "direct".to_string();
             },
             ProxyModeOptions::System => {
-                pmode = "system";
+                pmode = "system".to_string();
             },
             ProxyModeOptions::AutoDetect => {
-                pmode = "auto_detect";
+                pmode = "auto_detect".to_string();
             },
             ProxyModeOptions::FixedServers => {
-                pmode = "fixed_servers";
+                pmode = "fixed_servers".to_string();
             },
             ProxyModeOptions::PacUrl => {
-                pmode = "pac_url";
+                pmode = "pac_url".to_string();
             },
         };
 
@@ -45,19 +45,19 @@ impl ProxyOptions {
             ProxyModeOptions::Direct
             | ProxyModeOptions::System
             | ProxyModeOptions::AutoDetect => {
-                pac = "";
-                pserver = "";
-                pbypass = "";
+                pac = "".to_string();
+                pserver = "".to_string();
+                pbypass = "".to_string();
             },
             ProxyModeOptions::FixedServers => {
-                pac = "";
+                pac = "".to_string();
                 pserver = proxy_server;
                 pbypass = proxy_bypass_list;
             },
             ProxyModeOptions::PacUrl => {
                 pac = proxy_pac_url;
-                pserver = "";
-                pbypass = "";
+                pserver = "".to_string();
+                pbypass = "".to_string();
             },
         };
 
