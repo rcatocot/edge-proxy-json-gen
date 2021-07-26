@@ -1,0 +1,5 @@
+{
+    "rust-client.channel": "stable",
+    "rust-client.engine": "rls",
+    "rust.all_targets": true,
+}
