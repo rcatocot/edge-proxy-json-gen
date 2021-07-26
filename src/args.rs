@@ -1,7 +1,15 @@
+//!
+//! # Command Line Arguments
+//! 
+//! Builds `clap` arguments for use in `main.rs`.
+//! 
+//! Put in its own module to cut down on clutter in `main.rs`.
+//! 
+
 use clap::{App, Arg};
 
 pub fn build_args() -> App<'static, 'static> {
-    App::new("proxy-mode-json")
+    App::new("ms-edge-proxy-json-gen")
     .about("Emits JSON to configure Microsoft Edge's ProxySetting GPO.")
     .version("1.0")
     .author("Robert Cato <rcato@ci.thibodaux.la.us>")

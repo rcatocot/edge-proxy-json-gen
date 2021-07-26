@@ -44,6 +44,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "edge-proxy-json-gen"
+version = "1.0.0"
+dependencies = [
+ "clap",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "hermit-abi"
 version = "0.1.19"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -71,15 +80,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "5c7ed8b8c7b886ea3ed7dde405212185f423ab44682667c8c6dd14aa1d9f6612"
 dependencies = [
  "unicode-xid",
-]
-
-[[package]]
-name = "proxy_mode_json"
-version = "0.1.0"
-dependencies = [
- "clap",
- "serde",
- "serde_json",
 ]
 
 [[package]]
