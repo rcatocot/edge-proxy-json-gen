@@ -5,7 +5,10 @@ edition = "2018"
 authors = ["Robert Cato <rcato@ci.thibodaux.la.us>"]
 license = "MIT"
 keywords = ["microsoft", "edge", "gpo", "proxy", "proxy server"]
-
+documentation = "https://github.com/rcatocot/edge-proxy-json-gen/tree/main/doc/edge_proxy_json_gen"
+homepage = "https://github.com/rcatocot/edge-proxy-json-gen"
+repository = "https://github.com/rcatocot/edge-proxy-json-gen"
+readme = "https://github.com/rcatocot/edge-proxy-json-gen/blob/main/README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
