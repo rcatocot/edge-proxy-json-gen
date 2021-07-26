@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["edge_proxy_json_gen"];
