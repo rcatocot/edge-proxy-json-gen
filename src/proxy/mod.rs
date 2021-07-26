@@ -16,42 +16,48 @@ impl ProxyOptions {
         mode: ProxyModeOptions,
         proxy_pac_url: &'static str,
         proxy_server: &'static str,
-        proxy_bypass_list: &'static str ) -> Self
-    {
+        proxy_bypass_list: &'static str ) -> Self 
+    {        
         let pmode: &'static str;
         let pac: &'static str;
         let pserver: &'static str;
         let pbypass: &'static str;
+
         match mode {
             ProxyModeOptions::Direct => {
                 pmode = "direct";
-                pac = "";
-                pserver = "";
-                pbypass = proxy_bypass_list;
             },
             ProxyModeOptions::System => {
                 pmode = "system";
-                pac = "";
-                pserver = "";
-                pbypass = "";
             },
             ProxyModeOptions::AutoDetect => {
                 pmode = "auto_detect";
+            },
+            ProxyModeOptions::FixedServers => {
+                pmode = "fixed_servers";
+            },
+            ProxyModeOptions::PacUrl => {
+                pmode = "pac_url";
+            },
+        };
+
+        match mode {
+            ProxyModeOptions::Direct
+            | ProxyModeOptions::System
+            | ProxyModeOptions::AutoDetect => {
                 pac = "";
                 pserver = "";
                 pbypass = "";
             },
             ProxyModeOptions::FixedServers => {
-                pmode = "fixed_servers";
                 pac = "";
                 pserver = proxy_server;
                 pbypass = proxy_bypass_list;
             },
             ProxyModeOptions::PacUrl => {
-                pmode = "pac_url";
                 pac = proxy_pac_url;
                 pserver = "";
-                pbypass = proxy_bypass_list;
+                pbypass = "";
             },
         };
 
